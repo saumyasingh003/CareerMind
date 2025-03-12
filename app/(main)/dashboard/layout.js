@@ -5,7 +5,7 @@ const Layout = ({ children }) => {
   return (
     <div className="px-15">
       <div className="flex items-center justify-between  ">
-        <h1 className="sm:text-6xl text-4xl font-bold gradient-title mt-30 mb-10">
+        <h1 className="sm:text-6xl text-4xl font-bold gradient-title mt-20 mb-10">
           Industry Insights
         </h1>
         <hr />
