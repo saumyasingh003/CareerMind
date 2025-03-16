@@ -78,11 +78,11 @@
 
 @layer base {
   /* * {
-    @apply border-solid border-[1px] outline-blue-500/50;
+    @apply border-border outline-ring/50;
   } */
-  /* body {
-    @apply bg-background text-foreground;
-  } */
+  body {
+    @apply bg-[white] text-black;
+  }
 }
 
 @layer utilities {

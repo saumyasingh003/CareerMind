@@ -24,7 +24,7 @@ const Header = async() => {
 await checkUser();
 
   return (
-    <header className="fixed  top-0 w-full border-b  backdrop-blur-md z-50 supports-[backdrop-filter]:bg-background/60">
+    <header className="fixed  top-0 w-full border-b  backdrop-blur-md z-50 supports-[backdrop-filter]:bg-white/60">
       <nav className="container bg-[#4D9078]  mx-auto px-4 h-24 flex items-center justify-between">
         <Link href="/">
           <Image
