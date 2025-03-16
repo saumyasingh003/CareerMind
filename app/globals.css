@@ -77,9 +77,9 @@
 }
 
 @layer base {
-  * {
+  /* * {
     @apply border-solid border-[1px] outline-blue-500/50;
-  }
+  } */
   /* body {
     @apply bg-background text-foreground;
   } */
