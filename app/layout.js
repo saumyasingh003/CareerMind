@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
 
           <footer className="bg-[#4D9078]  py-2">
             <div className="container mx-auto px-4 text-center text-gray-200">
-              <p>Made with 💗 by RoadsideCoder</p>
+              <p>Made with 💗 by Saumya Singh</p>
             </div>
           </footer>
         </body>
