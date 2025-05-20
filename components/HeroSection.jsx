@@ -33,7 +33,9 @@ const HeroSection = () => {
 
 
   return (
-    <section className="w-fit pt-36 mt:pt-48 pb-10 mx-auto">
+
+    <div className="striped-background">
+ <section className="w-fit pt-36 mt:pt-48 pb-10 mx-auto   ">
       <div className="space-y-6 text-center">
         <div className="space-y-6 mx-auto">
           <h1 className="text-5xl font-bold md:text-6xl lg:text-7xl xl:text-8xl gradient-title animate-gradient">
@@ -73,6 +75,8 @@ const HeroSection = () => {
         </div>
       </div>
     </section>
+    </div>
+   
   );
 };
 

@@ -47,7 +47,7 @@ export default function Home() {
 
 
        {/* Stats Section */}
-       <section className="w-full py-12 md:py-24 ">
+       <section className="w-full py-12 md:py-24  ">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto text-center">
             <div className="flex flex-col items-center justify-center space-y-2">
@@ -73,7 +73,7 @@ export default function Home() {
 
 
        {/* How It Works Section */}
-       <section className="w-full py-12 md:py-24 bg-[#EAE2B7] my-10 ">
+       <section className="w-full py-12 md:py-24 bg-[#EAE2B7] my-10  ">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl font-bold mb-4">How It Works</h2>
@@ -82,7 +82,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto ">
             {howItWorks.map((item, index) => (
               <div
                 key={index}
@@ -101,7 +101,7 @@ export default function Home() {
 
 
 
-      <section className="w-full py-12 md:py-24 bg-muted/50">
+      <section className="w-full py-12 md:py-24 bg-muted/50 ">
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-3xl font-bold text-center mb-12">
             What Our Users Say
@@ -196,7 +196,7 @@ export default function Home() {
               <Button
                 size="lg"
                 variant="secondary"
-                className="h-11 mt-5 animate-bounce"
+                className="h-11 mt-5 animate-bounce bg-white"
               >
                 Start Your Journey Today <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
