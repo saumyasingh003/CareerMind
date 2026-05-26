@@ -20,11 +20,3 @@ Practice smart quizzes and interview questions with instant AI feedback to impro
 
 ### 4. Career Insights
 Explore salary trends, in-demand skills, industry growth, and personalized career recommendations powered by AI.
-
-
-
-
-
-For deployment details, visit:
-
-https://nextjs.org/docs/app/building-your-application/deploying
