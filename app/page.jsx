@@ -15,11 +15,30 @@ import { howItWorks } from "@/data/howItWorks";
 import { testimonial } from "@/data/testimonial";
 import { ArrowRight } from "lucide-react";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 export default function Home() {
+  const companies = [
+  "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+  "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+  "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+  "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKbrrDhzbHN03rqymUSYEs9oPJQ9sW0J1JeQ&s",
+];
+  
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % companies.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [companies.length]);
+
   return (
-    <div className="relative overflow-hidden bg-white">
+    <div className="relative overflow-hidden bg-white dotted-background">
       
       {/* Background Blur */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-red-100 blur-3xl opacity-40 -z-10" />
@@ -30,86 +49,107 @@ export default function Home() {
       {/* Hero */}
       <HeroSection />
 
-      {/* Trusted Companies */}
-      <section className="py-14 border-y border-red-100 bg-[#fffaf9]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <p className="text-center text-sm font-medium tracking-[0.3em] text-red-400 uppercase mb-10">
-            Trusted By Learners & Professionals From
-          </p>
+   {/* Trusted Companies */}
+  <section className="py-14 border-y border-red-100 bg-[#fffaf9] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        
+        <p className="text-center text-sm font-medium tracking-[0.3em] text-red-400 uppercase mb-10">
+          Trusted By Learners & Professionals From
+        </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-10 text-2xl font-semibold text-gray-400">
-            <span>Google</span>
-            <span>Microsoft</span>
-            <span>Amazon</span>
-            <span>Netflix</span>
-            <span>Meta</span>
-          </div>
-        </div>
-      </section>
+        <div className="relative flex items-center justify-center h-[80px]">
+          {companies.map((logo, index) => {
+            const diff = (index - current + companies.length) % companies.length;
+            let positionClass = "";
+            if (diff === 0) {
+              positionClass = "-translate-x-[200px] md:-translate-x-[280px] opacity-100 scale-100";
+            } else if (diff === 1) {
+              positionClass = "translate-x-0 opacity-100 scale-100";
+            } else if (diff === 2) {
+              positionClass = "translate-x-[200px] md:translate-x-[280px] opacity-100 scale-100";
+            } else if (diff === 3) {
+              positionClass = "translate-x-[400px] md:translate-x-[560px] opacity-0 scale-90 pointer-events-none";
+            } else {
+              positionClass = "-translate-x-[400px] md:-translate-x-[560px] opacity-0 scale-90 pointer-events-none";
+            }
 
-      {/* Features */}
-      <section className="w-full py-24 lg:py-32 bg-gradient-to-b from-[#fff5f5] to-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <p className="text-sm font-semibold tracking-[0.3em] uppercase text-red-500 mb-4">
-              Features
-            </p>
-
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900">
-              Powerful AI Tools for{" "}
-              <span className="text-red-500">Career Growth</span>
-            </h2>
-
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Everything you need to prepare, improve, and accelerate your
-              professional journey with AI-powered guidance.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <Card
+            return (
+              <img
                 key={index}
-                className="
-                group
-                rounded-3xl
-                border
-                border-red-100
-                bg-white
-                hover:-translate-y-2
-                hover:border-red-300
-                hover:shadow-[0_20px_60px_rgba(239,68,68,0.12)]
-                transition-all
-                duration-300
-                "
-              >
-                <CardContent className="p-8 flex flex-col items-center text-center">
-
-                  <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-red-50 text-red-500 group-hover:bg-red-500 group-hover:text-white transition-all duration-300">
-                    {feature.icon}
-                  </div>
-
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-red-500 transition-colors">
-                    {feature.title}
-                  </h3>
-
-                  <p className="text-gray-600 leading-7">
-                    {feature.description}
-                  </p>
-
-                  <div className="mt-6 h-1 w-12 rounded-full bg-red-100 group-hover:w-20 group-hover:bg-red-500 transition-all duration-300" />
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                src={logo}
+                alt="Company Logo"
+                className={`absolute h-10 w-[160px] object-contain transition-all duration-700 ease-in-out ${positionClass}`}
+              />
+            );
+          })}
         </div>
-      </section>
+      </div>
+    </section>
+      {/* Features */}
+<section className="w-full py-12 lg:py-16 bg-[#C89933]">
+  <div className="max-w-7xl mx-auto px-6 lg:px-10">
+    
+    <div className="text-center max-w-3xl mx-auto mb-10">
+      <p className="text-sm font-semibold tracking-[0.3em] uppercase text-black/70 mb-2">
+        Features
+      </p>
+
+      <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black">
+        Powerful AI Tools for{" "}
+        <span className="text-white">Career Growth</span>
+      </h2>
+
+      <p className="mt-3 text-base leading-7 text-black/70">
+        Everything you need to prepare, improve, and accelerate your
+        professional journey with AI-powered guidance.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {features.map((feature, index) => (
+        <Card
+          key={index}
+          className="
+          group
+          rounded-2xl
+          border
+          border-white/20
+          bg-white/10
+          backdrop-blur-xl
+          hover:-translate-y-2
+          hover:bg-black
+          hover:border-black
+          hover:shadow-[0_20px_60px_rgba(0,0,0,0.25)]
+          transition-all
+          duration-300
+          "
+        >
+          <CardContent className="p-6 flex flex-col items-center text-center">
+
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-black/10 text-black group-hover:bg-[#C89933] group-hover:text-white transition-all duration-300">
+              {feature.icon}
+            </div>
+
+            <h3 className="text-lg font-semibold text-black mb-2 group-hover:text-white transition-colors">
+              {feature.title}
+            </h3>
+
+            <p className="text-sm text-black/70 leading-6 group-hover:text-gray-300 transition-colors">
+              {feature.description}
+            </p>
+
+            <div className="mt-4 h-1 w-12 rounded-full bg-black/20 group-hover:w-20 group-hover:bg-[#C89933] transition-all duration-300" />
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
 
     
 
       {/* How It Works */}
-      <section className="w-full py-24 lg:py-32 bg-[#fffaf9]">
+      <section className="w-full py-24 lg:py-32 ">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
           <div className="text-center max-w-3xl mx-auto mb-20">
@@ -163,7 +203,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="w-full py-24 bg-white">
+      <section className="w-full py-24 bg-[#C89933]">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
           <div className="text-center mb-16">
@@ -227,7 +267,7 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section className="w-full py-24 bg-[#fffaf9]">
+      <section className="w-full py-24 ">
         <div className="max-w-5xl mx-auto px-6 lg:px-10">
 
           <div className="text-center mb-16">

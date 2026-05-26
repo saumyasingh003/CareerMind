@@ -113,3 +113,18 @@
 }
 
 
+.dotted-background {
+  background-color: #EAE2B7; /* Base background color */
+  background-image: radial-gradient(#4a5568 1px, transparent 1px); /* Dots pattern */
+  background-size: 30px 30px; /* Size of the dots grid */
+  animation: moveDots 2s linear infinite; /* Faster animation */
+}
+
+@keyframes moveDots {
+  from {
+    background-position: 0 0; /* Start position of dots */
+  }
+  to {
+    background-position: 30px 30px; /* End position of dots */
+  }
+}

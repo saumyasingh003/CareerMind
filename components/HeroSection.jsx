@@ -57,16 +57,16 @@ const HeroSection = () => {
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 md:text-6xl lg:text-7xl xl:text-8xl leading-[1.1]">
             Your{" "}
             <span className="bg-gradient-to-r from-[#ed4a09] to-orange-500 bg-clip-text text-transparent">
-              AI Career
+              AI Career Coach
             </span>{" "}
-            Coach for
+           for
             <span className="block">
               Professional Success
             </span>
           </h1>
 
           {/* Description */}
-          <p className="mt-8  text-lg leading-8 text-gray-600 md:text-xl">
+          <p className="mt-6 italic text-lg leading-8 text-gray-600 md:text-xl">
             Accelerate your career with AI-powered interview preparation,
             resume optimization, personalized roadmaps, and smart career
             insights built for modern professionals.
@@ -103,22 +103,24 @@ const HeroSection = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-orange-200/20 to-orange-400/20 blur-3xl rounded-[40px]" />
 
             {/* Main Image */}
-         <div
-  ref={imageRef}
-  className="relative transition-all duration-500 ease-out max-w-5xl mx-auto"
->
-  <div className="overflow-hidden rounded-[28px] border-[6px] border-black bg-white shadow-2xl">
-    <Image
-      src="/banner1.avif"
-      width={900}
-      height={500}
-      alt="AI Career Dashboard"
-      priority
-      className="w-full object-cover"
-    />
-  </div>
-</div>
+            <div
+              ref={imageRef}
+              className="relative transition-all duration-500 ease-out mx-auto max-w-[1100px]"
+            >
+              <div className="relative overflow-hidden rounded-[28px] border-[6px] border-black shadow-2xl">
 
+                <Image
+                  src="/banner1.avif"
+                  width={1400}
+                  height={350}
+                  alt="AI Career Dashboard"
+                  priority
+                  className="w-full h-[700px] object-cover"
+                />
+
+
+              </div>
+            </div>
 
           </div>
         </div>

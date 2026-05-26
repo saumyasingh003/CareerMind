@@ -1,7 +1,7 @@
-
 import React from "react";
-import { Button } from "@/components/ui/button"
-  import {PenBox,
+import { Button } from "@/components/ui/button";
+import {
+  PenBox,
   LayoutDashboard,
   FileText,
   GraduationCap,
@@ -9,7 +9,12 @@ import { Button } from "@/components/ui/button"
   StarsIcon,
 } from "lucide-react";
 import Link from "next/link";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from "@clerk/nextjs";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -19,67 +24,120 @@ import {
 import Image from "next/image";
 import { checkUser } from "@/lib/checkUser";
 
-
-const Header = async() => {
-await checkUser();
+const Header = async () => {
+  await checkUser();
 
   return (
-    <header className="fixed  top-0 w-full border-b  backdrop-blur-md z-50 supports-[backdrop-filter]:bg-white/60">
-      <nav className="container bg-[#4D9078]  mx-auto px-4 h-24 flex items-center justify-between">
-        <Link href="/">
-          <Image
-            src={"/logo.png"}
-            alt="Sensai Logo"
-            width={200}
-            height={90}
-            className="h-20 w-20"
-          />
+    <header className="fixed top-0 w-full z-50 border-b border-white/10 bg-[#4D9078]/90 backdrop-blur-xl">
+      <nav className="max-w-7xl mx-auto px-4 lg:px-8 h-16 flex items-center justify-between">
+
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-3">
+          <div className="relative">
+            <Image
+              src={"/logo.png"}
+              alt="Sensai Logo"
+              width={50}
+              height={50}
+              className="h-11 w-11 rounded-xl object-cover"
+            />
+          </div>
+
+          <div className="hidden sm:block">
+            <h1 className="text-white font-bold text-xl tracking-wide">
+              SensAI
+            </h1>
+            <p className="text-white/70 text-xs -mt-1">
+              AI Career Platform
+            </p>
+          </div>
         </Link>
 
-        {/* Action Buttons */}
-        <div className="flex items-center space-x-2 md:space-x-4 ">
+        {/* Right Section */}
+        <div className="flex items-center gap-2 md:gap-4">
+
           <SignedIn>
+
+            {/* Dashboard */}
             <Link href="/dashboard">
               <Button
-                variant="outline"
-                className="hidden md:inline-flex items-center gap-2"
+                className="
+    hidden md:flex 
+    items-center gap-2 
+    bg-white 
+    text-[#4D9078] 
+    hover:bg-white/90 
+    hover:text-[#4D9078]
+    rounded-xl 
+    shadow-lg
+    font-medium
+    "
               >
                 <LayoutDashboard className="h-4 w-4" />
-                Industry Insights
+                Dashboard
               </Button>
-              <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
+
+              <Button
+                className="
+    md:hidden 
+    bg-white 
+    text-[#4D9078] 
+    hover:bg-white/90 
+    w-10 
+    h-10 
+    rounded-xl 
+    p-0
+    shadow-lg
+    "
+              >
                 <LayoutDashboard className="h-4 w-4" />
               </Button>
             </Link>
 
-            {/* Growth Tools Dropdown */}
+            {/* Growth Tools */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button className="flex items-center gap-2 bg-white">
+                <Button className="bg-white text-[#4D9078] hover:bg-white/90 rounded-xl font-medium shadow-lg">
                   <StarsIcon className="h-4 w-4" />
-                  <span className="hidden md:block">Growth Tools</span>
+
+                  <span className="hidden md:block">
+                    Growth Tools
+                  </span>
+
                   <ChevronDown className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-48 bg-white">
+
+              <DropdownMenuContent
+                align="end"
+                className="w-56 rounded-2xl border-0 bg-white p-2 shadow-2xl"
+              >
                 <DropdownMenuItem asChild>
-                  <Link href="/resume" className="flex items-center gap-2">
-                    <FileText className="h-4 w-4" />
+                  <Link
+                    href="/resume"
+                    className="flex items-center gap-3 rounded-lg cursor-pointer"
+                  >
+                    <FileText className="h-4 w-4 text-[#4D9078]" />
                     Build Resume
                   </Link>
                 </DropdownMenuItem>
+
                 <DropdownMenuItem asChild>
                   <Link
                     href="/ai-cover-letter"
-                    className="flex items-center gap-2"
+                    className="flex items-center gap-3 rounded-lg cursor-pointer"
                   >
-                    <PenBox className="h-4 w-4" />
+                    <PenBox className="h-4 w-4 text-[#4D9078]" />
                     Cover Letter
                   </Link>
                 </DropdownMenuItem>
+
                 <DropdownMenuItem asChild>
-                  <Link href="/interview" className="flex items-center gap-2">
-                    <GraduationCap className="h-4 w-4" />
+                  <Link
+                    href="/interview"
+                    className="flex items-center gap-3 rounded-lg cursor-pointer"
+                  >
+                    <GraduationCap className="h-4 w-4 text-[#4D9078]" />
                     Interview Prep
                   </Link>
                 </DropdownMenuItem>
@@ -87,29 +145,37 @@ await checkUser();
             </DropdownMenu>
           </SignedIn>
 
+          {/* Sign In */}
           <SignedOut>
             <SignInButton>
-              <Button variant="outline">Sign In</Button>
+              <Button className="bg-white text-[#4D9078] hover:bg-white/90 rounded-xl px-5">
+                Sign In
+              </Button>
             </SignInButton>
           </SignedOut>
 
+          {/* User */}
           <SignedIn>
-  <UserButton
-    appearance={{
-      elements: {
-        avatarBox: "w-20 h-20", 
-        userButtonPopoverCard: "shadow-xl",
-        userPreviewMainIdentifier: "font-semibold",
-      },
-    }}
-    afterSignOutUrl="/"
-  />
-</SignedIn>
-
+            <div className="scale-90">
+              <UserButton
+                appearance={{
+                  elements: {
+                    avatarBox:
+                      "w-10 h-10 ring-2 ring-white/30",
+                    userButtonPopoverCard:
+                      "shadow-2xl rounded-2xl",
+                    userPreviewMainIdentifier:
+                      "font-semibold",
+                  },
+                }}
+                afterSignOutUrl="/"
+              />
+            </div>
+          </SignedIn>
         </div>
       </nav>
     </header>
   );
-}
+};
 
 export default Header;

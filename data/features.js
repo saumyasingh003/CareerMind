@@ -1,27 +1,36 @@
-import { BrainCircuit, Briefcase, LineChart, ScrollText } from "lucide-react";
+import {
+  FileText,
+  PenBox,
+  BrainCircuit,
+  LineChart,
+} from "lucide-react";
 
 export const features = [
   {
-    icon: <BrainCircuit className="w-10 h-10 mb-4 text-primary" />,
-    title: "AI-Powered Career Guidance",
+    icon: <FileText className="w-10 h-10 mb-4 text-primary" />,
+    title: "AI Resume Maker",
     description:
-      "Get personalized career advice and insights powered by advanced AI technology.",
+      "Create ATS-friendly resumes instantly with AI-powered formatting, content suggestions, and professional templates.",
   },
+
   {
-    icon: <Briefcase className="w-10 h-10 mb-4 text-primary" />,
-    title: "Interview Preparation",
+    icon: <PenBox className="w-10 h-10 mb-4 text-primary" />,
+    title: "AI Cover Letter",
     description:
-      "Practice with role-specific questions and get instant feedback to improve your performance.",
+      "Generate personalized cover letters tailored to your skills, experience, and target job roles in seconds.",
   },
+
+  {
+    icon: <BrainCircuit className="w-10 h-10 mb-4 text-primary" />,
+    title: "AI Quiz & Interview Prep",
+    description:
+      "Practice smart quizzes and interview questions with instant AI feedback to improve confidence and performance.",
+  },
+
   {
     icon: <LineChart className="w-10 h-10 mb-4 text-primary" />,
-    title: "Industry Insights",
+    title: "Career Insights",
     description:
-      "Stay ahead with real-time industry trends, salary data, and market analysis.",
-  },
-  {
-    icon: <ScrollText className="w-10 h-10 mb-4 text-primary" />,
-    title: "Smart Resume Creation",
-    description: "Generate ATS-optimized resumes with AI assistance.",
+      "Explore salary trends, in-demand skills, industry growth, and personalized career recommendations powered by AI.",
   },
 ];
