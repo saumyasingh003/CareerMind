@@ -313,7 +313,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/banner2.webp"
+            src="/banner2.jpg"
             alt="Career Illustration"
             fill
             className="object-cover"
