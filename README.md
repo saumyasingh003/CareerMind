@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# CareerMind
 
-## Getting Started
+![CareerMind Banner](./assets/banner.jpg)
 
-First, run the development server:
+CareerMind is an AI-powered career coaching platform built with Next.js.  
+It helps users create professional resumes, generate personalized cover letters, prepare for interviews, and explore career insights using AI-driven tools.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 1. AI Resume Maker
+Create ATS-friendly resumes instantly with AI-powered formatting, content suggestions, and professional templates.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 2. AI Cover Letter
+Generate personalized cover letters tailored to your skills, experience, and target job roles in seconds.
 
-## Learn More
+### 3. AI Quiz & Interview Prep
+Practice smart quizzes and interview questions with instant AI feedback to improve confidence and performance.
 
-To learn more about Next.js, take a look at the following resources:
+### 4. Career Insights
+Explore salary trends, in-demand skills, industry growth, and personalized career recommendations powered by AI.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For deployment details, visit:
+
+https://nextjs.org/docs/app/building-your-application/deploying
