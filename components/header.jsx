@@ -36,7 +36,7 @@ const Header = async () => {
           <div className="relative">
             <Image
               src={"/logo.png"}
-              alt="Sensai Logo"
+              alt="Logo"
               width={50}
               height={50}
               className="h-11 w-11 rounded-xl object-cover"
@@ -45,7 +45,7 @@ const Header = async () => {
 
           <div className="hidden sm:block">
             <h1 className="text-white font-bold text-xl tracking-wide">
-              SensAI
+              CarrerMind
             </h1>
             <p className="text-white/70 text-xs -mt-1">
               AI Career Platform
